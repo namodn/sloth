@@ -46,7 +46,7 @@ make-doc: make-man
 install-bin:
 	cp $(NAME_BIN) $(PREFIX)$(DIR_BIN)/$(NAME_BIN)
 
-install-man:
+install-man: make-man
 	cp $(NAME_MAN) $(PREFIX)$(DIR_MAN)/$(NAME_MAN)
 
 remove-bin:
