@@ -33,6 +33,7 @@
 #include <sys/time.h>
 
 // Constants
+#define VERSION "1.0.0"
 #define DEFAULT_SPEED 0
 #define POS_SPEED 1
 #define POS_PROG 2
@@ -103,6 +104,7 @@ int main(int argc, char *argv[]) {
  *
  */
 void usage() {
+	printf("sloth version %s\n", VERSION);
 	printf("usage: sloth <0-99999> <progname>\n");
 }
 

@@ -16,7 +16,7 @@ CC_OPTIONS=-Wall -O
 
 
 
-make: clean make-bin
+make: make-bin
 
 install: make install-bin install-man
 
