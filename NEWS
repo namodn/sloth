@@ -1,6 +1,17 @@
+2002-02-09
+
+	Version 1.1.0 (devel) released. With this new release comes the
+	added ability to control a process that is already running. 
+	Tagged as devel, this build has not been extensively tested and 
+	could have bugs.
+
 2002-02-06
 
-    Version 1.0.1 released. This updated is primarily because of
+    Version 1.0.1 (stable) released. This updated is primarily because of
     updated build tools. Sloth now uses GNU Autotools for a standardized
     build process.
 
+2002-02-02
+
+	Version 1.0.0 (stable) released. First release of sloth, hooray! 
+	

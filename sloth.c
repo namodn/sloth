@@ -37,7 +37,6 @@
 
 // Prototypes
 void usage();
-void handleProc(pid_t, long, long);
 
 /*****************************************************************************
  * int main(int argc, char *argv[]);
@@ -50,8 +49,10 @@ int main(int argc, char *argv[]) {
 	int exit_code = 0;
 	int i = 0;
 	int spawn = 0;
+	int status = 0;
 	long dspeed = DEFAULT_SPEED;  // delay speed
 	long wspeed = DEFAULT_SPEED; // wait speed
+	struct timeval timeout;
 
 	if (argc < TOTAL_ARGS) {
 		usage();
@@ -80,13 +81,24 @@ int main(int argc, char *argv[]) {
 	}
 	
 	if (!exit_code) {
-		//printf("sloth: wait %ldms, delay %ldms\n", wspeed, dspeed);
-
 		if (spawn) {
 			// control spawned process
 			pid = fork();
 			if (pid != 0) {
-				handleProc(pid, wspeed, dspeed);
+				while(!waitpid(pid, &status, WNOHANG)) {
+					// wait
+					timeout.tv_sec = 0;
+					timeout.tv_usec = wspeed;
+					select(0, (fd_set *)0, (fd_set *)0, (fd_set *)0, &timeout);
+					// stop
+					kill(pid, SIGSTOP);
+					// delay
+					timeout.tv_sec = 0;
+					timeout.tv_usec = dspeed;
+					select(0, (fd_set *)0, (fd_set *)0, (fd_set *)0, &timeout);
+					// continue
+					kill(pid, SIGCONT);
+				}
 			}
 			else {
 				// child execution begins 
@@ -96,7 +108,27 @@ int main(int argc, char *argv[]) {
 		} else {
 			// control existing process
 			pid = (pid_t)atoi(argv[POS_PROG]);
-			handleProc(pid, wspeed, dspeed);
+			while(!exit_code) {
+				// wait
+				timeout.tv_sec = 0;
+				timeout.tv_usec = wspeed;
+				select(0, (fd_set *)0, (fd_set *)0, (fd_set *)0, &timeout);
+				// stop
+				if (0 > kill(pid, SIGSTOP)) {
+					printf("sloth: failed sending signal to PID '%d'. No permission or PID does not exist.\n", pid);
+					exit_code = 2;
+				} else {
+					// delay
+					timeout.tv_sec = 0;
+					timeout.tv_usec = dspeed;
+					select(0, (fd_set *)0, (fd_set *)0, (fd_set *)0, &timeout);
+					// continue
+					if (0 > kill(pid, SIGCONT)) {
+						printf("sloth: failed sending signal to PID '%d'. No permission or PID does not exist.\n", pid);
+						exit_code = 2;
+					}
+				}
+			}
 		}
 	}
 	exit(exit_code);
@@ -114,31 +146,4 @@ void usage() {
 	printf("usage: sloth <0-99999> <progname>\n");
 }
 
-
-/*****************************************************************************
- * void handleProc();
- *
- * handles process management of a given pid
- *
- */
-void handleProc(pid_t pid, long wspeed, long dspeed) {
-	int status = 0;
-	struct timeval timeout;
-
-	while(!waitpid(pid, &status, WNOHANG)) {
-		// wait
-		timeout.tv_sec = 0;
-		timeout.tv_usec = wspeed;
-		select(0, (fd_set *)0, (fd_set *)0, (fd_set *)0, &timeout);
-		// stop
-		kill(pid, SIGSTOP);
-		// delay
-		timeout.tv_sec = 0;
-		timeout.tv_usec = dspeed;
-		select(0, (fd_set *)0, (fd_set *)0, (fd_set *)0, &timeout);
-		// continue
-		kill(pid, SIGCONT);
-	}
-	return;
-}
 

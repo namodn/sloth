@@ -1,11 +1,14 @@
-2002-02-08 Nick Jennings <nick@namodn.com>
+2002-02-09 Nick Jennings <nick@namodn.com>
 
-	* sloth.c: seperated process handling out into function 
-	handleProc(pid_t, long, long).
+	* Version 1.1.0 (devel) released.
+
+	* sloth.c: Added functionality for sloth to send control signals
+	to an arbitrary process. This allows the user to slow processes
+	that are already running. 
 
 2002-02-06 Nick Jennings <nick@namodn.com>
 
-	* Version 1.0.1 released.
+	* Version 1.0.1 (stable) released.
 
 	* NEWS: Updated NEWS file to reflect release.
 	* INSTALL: Updated INSTALL file to reflect new install process.
@@ -33,6 +36,6 @@
 
 2002-02-02 Nick Jennings <nick@namodn.com>
 
-	* Version 1.0.0 released.
+	* Version 1.0.0 (stable) released.
 	* Makefile: Initial homebrew Makefile system used (hack).
 
