@@ -1,6 +1,6 @@
 /*
  *  sloth v1.0.0
- *  Copyright (C) 2002  Nick Jennings
+ *  Copyright (C) 2002  Nick Jennings <nick@namodn.com>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -18,12 +18,13 @@
  *  This program is developed and maintained by Nick Jennings.
  * Contact Information:
  *
- *    Nick Jennings                 nick@namodn.com
- *    PMB 338                       http://nick.namodn.com
- *    4096 Piedmont Ave.
- *    Oakland, CA 94611
+ * $Id$
  */
 
+// $Author$
+// $Name$
+// $Revision$
+// $Id$
 #include <stdio.h>
 #include <wait.h>
 #include <signal.h>
@@ -31,7 +32,7 @@
 #include <sys/time.h>
 
 // Constants
-#define VERSION "1.0.1"
+#define VERSION "1.1.0"
 #define DEFAULT_SPEED 0
 #define POS_SPEED 1
 #define POS_PROG 2
