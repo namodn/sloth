@@ -26,7 +26,8 @@ clean: clean-bin
 
 dist: distclean make-doc
 	mkdir $(NAME_DIST)-$(VERSION)
-	cp $(SOURCE) $(NAME_MAN) README INSTALL COPYING Makefile $(NAME_DIST)-$(VERSION)/
+	cp $(SOURCE) INSTALL COPYING Makefile $(NAME_DIST)-$(VERSION)/
+	mv $(NAME_MAN) README $(NAME_DIST)-$(VERSION)/
 	tar -cvf $(NAME_DIST)-$(VERSION).tar $(NAME_DIST)-$(VERSION)/
 	gzip $(NAME_DIST)-$(VERSION).tar
 
