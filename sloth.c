@@ -33,7 +33,7 @@
 #include <sys/time.h>
 
 // Constants
-#define VERSION "1.0.0"
+#define VERSION "1.0.1"
 #define DEFAULT_SPEED 0
 #define POS_SPEED 1
 #define POS_PROG 2
