@@ -1,8 +1,18 @@
-INSTALL:
+note: 
+ sloth depends on the standard libc6 development libraries. specifically
+  <stdio.h>
+  <unistd.h>
+  <stdlib.h>
+  <wait.h>
+  <sys/ptrace.h>
+  <sys/types.h>
+  <sys/time.h>
+
+* INSTALL:
 	(as root)
 	# make install 
 
-REMOVE:
+* REMOVE:
 	(as root)
 	# make remove
 
