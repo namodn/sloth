@@ -1,4 +1,4 @@
-2002-02-09
+2002-02-10
 
 	Version 1.1.0 (devel) released. With this new release comes the
 	added ability to control a process that is already running. 
@@ -7,9 +7,9 @@
 
 2002-02-06
 
-    Version 1.0.1 (stable) released. This updated is primarily because of
-    updated build tools. Sloth now uses GNU Autotools for a standardized
-    build process.
+	Version 1.0.1 (stable) released. This updated is primarily because of
+	updated build tools. Sloth now uses GNU Autotools for a standardized
+	build process.
 
 2002-02-02
 
