@@ -1,0 +1,45 @@
+=pod
+
+=head1 NAME
+
+   sloth - slow down the speed a process runs at
+
+=head1 SYNOPSIS
+
+   sloth [DELAY(ms)] [PROGRAM]
+
+=head1 DESCRIPTION
+
+   Sloth allows you to slow down a specified application by 
+   specifying (in miliseconds) the delay on the process. It slows 
+   down the process by sending SIGSTOP & SIGCONT signals to the 
+   process over a very fast period of time, giving the appearance 
+   of a slower application.
+   
+   The number given (as the first command line argument) will be 
+   the wait period before stopping and unstopping the process. 
+   The actual time between a stop and an unstop is DELAY * 10. 
+   
+   Example: sloth 5000 ines Pirates.nes
+   
+   This command will run the emulator 'ines' with the game 
+   'Pirates'. Every 5000ms it will send a SIGSTOP (effectively 
+   pausing the game) wait for 50,000ms (n*10), then send a 
+   SIGCONT, continuing the process where it left off.
+
+=head1 ARTHOR
+
+   Written by Nick Jennings.
+
+=head1 BUGS
+ 
+   Report bugs to Nick Jennings <nick@namodn.com>
+
+=head1 COPYRIGHT
+
+   Copyright © 2002 Nick Jennings
+   This is free software; see the source for copying conditions.
+   There is NO warranty; not even for MERCHANTABILITY or FITNESS 
+   FOR A PARTICULAR PURPOSE.
+
+=cut
