@@ -8,6 +8,10 @@ note:
   <sys/types.h>
   <sys/time.h>
 
+ When I figure out all the conftool stuff, I'll make a proper configure
+ script. :)
+---------------------------------------------------------------------------
+
 * INSTALL:
 	(as root)
 	# make install 
