@@ -1,0 +1,14 @@
+2002-02-05 Nick Jennings <nick@namodn.com>
+
+	* Makefile.am (sloth_SOURCES): added sloth.1 to sloth_SOURCES for manfile
+	installation.
+
+2002-02-04 Nick Jennings <nick@namodn.com>
+
+	* Updated build tools. Using GNU Autotools.
+	* Added: Makefile.am, configure.in, INSTALL, NEWS, ChangeLog, AUTHORS
+
+2002-02-02 Nick Jennings <nick@namodn.com>
+
+	* Version 1.0.0 released.
+	* Initial homebrew Makefile system used (hack)
