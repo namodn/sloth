@@ -1,28 +1,33 @@
 2002-02-06 Nick Jennings <nick@namodn.com>
 
-    * Version 1.0.1 released.
+	* Version 1.0.1 released.
 
-    * NEWS: Updated NEWS file to reflect release
-    * INSTALL: Updated INSTALL file to reflect new install process
+	* NEWS: Updated NEWS file to reflect release
+	* INSTALL: Updated INSTALL file to reflect new install process
+
+	* README: Updated readme to reflect manpage
+	* sloth.1: Updated manpage
     
-    * sloth.c (include): no longer including sys/ptrace.h (was never
-    needed), left over from development. Also removed unistd.h & 
-    stdlib.h. Added signal.h
+	* sloth.c (include): no longer including sys/ptrace.h (was never
+	needed), left over from development. Also removed unistd.h & 
+	stdlib.h. Added signal.h
 
-    * configure.in (AC_HAVE_HEADERS): removed sys/ptrace.h from list
-    of headers to check for. Added signal.h
+	* configure.in (AC_HAVE_HEADERS): removed sys/ptrace.h from list
+	of headers to check for. Added signal.h
 
 2002-02-05 Nick Jennings <nick@namodn.com>
 
-	* Makefile.am (sloth_SOURCES): added sloth.1 to sloth_SOURCES for manfile
-	installation.
+	* Makefile.am (sloth_SOURCES): added sloth.1 to sloth_SOURCES for 
+	manfile installation.
 
 2002-02-04 Nick Jennings <nick@namodn.com>
 
 	* Updated build tools. Using GNU Autotools.
-	* Added: Makefile.am, configure.in, INSTALL, NEWS, ChangeLog, AUTHORS
+	* Added: Makefile.am, configure.in, INSTALL, NEWS, ChangeLog, 
+	AUTHORS
 
 2002-02-02 Nick Jennings <nick@namodn.com>
 
 	* Version 1.0.0 released.
 	* Initial homebrew Makefile system used (hack)
+
