@@ -1,5 +1,5 @@
 /*
- *  sloth v1.0.0
+ *  sloth v1.1.0
  *  Copyright (C) 2002  Nick Jennings <nick@namodn.com>
  *
  *  This program is free software; you can redistribute it and/or modify
@@ -19,12 +19,9 @@
  * Contact Information:
  *
  * $Id$
+ *
  */
 
-// $Author$
-// $Name$
-// $Revision$
-// $Id$
 #include <stdio.h>
 #include <wait.h>
 #include <signal.h>

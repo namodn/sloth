@@ -23,3 +23,4 @@ if ($ARGV[0]) {
 	system('rm', "$ARGV[0]");
 	system('mv', "$ARGV[0].tmp", "$ARGV[0]");
 }
+exit(1);
