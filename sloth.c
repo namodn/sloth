@@ -25,10 +25,8 @@
  */
 
 #include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
 #include <wait.h>
-#include <sys/ptrace.h>
+#include <signal.h>
 #include <sys/types.h>
 #include <sys/time.h>
 

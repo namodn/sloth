@@ -1,22 +1,14 @@
-note: 
- sloth depends on the standard libc6 development libraries. specifically
-  <stdio.h>
-  <unistd.h>
-  <stdlib.h>
-  <wait.h>
-  <sys/ptrace.h>
-  <sys/types.h>
-  <sys/time.h>
+INSTALLATION
+------------
+$ ./configure
+$ make
 
- When I figure out all the conftool stuff, I'll make a proper configure
- script. :)
----------------------------------------------------------------------------
+(as root)
+# make install
 
-* INSTALL:
-	(as root)
-	# make install 
 
-* REMOVE:
-	(as root)
-	# make remove
+HELP
+----
+  For documentation on sloth, either read the README or, once installed,
+  you can read the sloth manpage: 'man sloth'
 

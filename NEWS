@@ -1,0 +1,6 @@
+2002-02-06
+
+    Version 1.0.1 released. This updated is primarily because of
+    updated build tools. Sloth now uses GNU Autotools for a standardized
+    build process.
+
