@@ -2,6 +2,9 @@
 
 	* Version 1.1.0 (devel) released.
 
+	* sloth.1: Updated document to reflect new command line 
+	parameters.
+
 	* sloth.c: Added functionality for sloth to send control signals
 	to an arbitrary process. This allows the user to slow processes
 	that are already running. 

@@ -7,21 +7,25 @@
 
 =head1 SYNOPSIS
 
-   sloth [DELAY(ms)] [PROGRAM]
+   sloth [DELAY(ms)] [PROGRAM or PID]
 
 
 =head1 DESCRIPTION
 
-   Sloth allows you to slow down a specified application by 
-   specifying (in miliseconds) the delay on the process. It slows 
-   down the process by sending SIGSTOP & SIGCONT signals to the 
-   process over a very fast period of time, giving the appearance 
-   of a slower application.
+   Sloth allows you to slow down a process by specifying (in 
+   miliseconds) the delay. It slows down the process by sending 
+   SIGSTOP & SIGCONT signals to the process over a very fast 
+   period of time, giving the appearance of a slower application.
    
    The number given (as the first command line argument) will be 
    the wait period before stopping and unstopping the process. 
    The actual time between a stop and an unstop is DELAY * 10. 
    
+   The second parameter can either be the name of the program 
+   (with all command line args) to spawn, or the PID of a 
+   currently running process. So, if the second parameter is
+   all numbers, sloth will assume it's PID, if there are any
+   letters, sloth will attempt to execute it.
 
 =head1 EXAMPLE 
 
@@ -32,6 +36,10 @@
    pausing the game) wait for 50,000ms (n*10), then send a 
    SIGCONT, continuing the process where it left off.
 
+   # sloth 8000 4172
+
+   This command will slow PID 4172 so that it is stopped 
+   for 80,000ms every 8000ms. 
 
 =head1 ABOUT
 
