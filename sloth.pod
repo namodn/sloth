@@ -2,7 +2,7 @@
 
 =head1 NAME
 
-   sloth - slow down the speed a process runs at
+   sloth - slow down a process
 
 =head1 SYNOPSIS
 

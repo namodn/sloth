@@ -1,0 +1,8 @@
+INSTALL:
+	(as root)
+	# make install 
+
+REMOVE:
+	(as root)
+	# make remove
+

@@ -16,7 +16,7 @@ CC_OPTIONS=-Wall -O
 
 
 
-make: make-bin
+make: clean make-bin
 
 install: make install-bin install-man
 
@@ -24,16 +24,14 @@ remove: remove-bin remove-man
 
 clean: clean-bin
 
-dist: make-man
+dist: distclean make-doc
 	mkdir $(NAME_DIST)-$(VERSION)
-	cp $(SOURCE) $(NAME_MAN) Makefile $(NAME_DIST)-$(VERSION)/
+	cp $(SOURCE) $(NAME_MAN) README INSTALL COPYING Makefile $(NAME_DIST)-$(VERSION)/
 	tar -cvf $(NAME_DIST)-$(VERSION).tar $(NAME_DIST)-$(VERSION)/
 	gzip $(NAME_DIST)-$(VERSION).tar
 
 distclean:
-	rm -rf $(NAME_DIST)-$(VERSION)/
-	rm $(NAME_DIST)-$(VERSION).tar.gz
-	
+	rm -rf $(NAME_DIST)-$(VERSION)*
 
 make-bin:
 	$(CC) $(SOURCE) -o $(NAME_BIN) $(CC_OPTIONS)
@@ -41,6 +39,9 @@ make-bin:
 make-man:
 	pod2man $(NAME_POD) > $(NAME_MAN)
 	./parseman.pl $(NAME_MAN)
+
+make-doc: make-man
+	pod2text $(NAME_POD) > README
 
 install-bin:
 	cp $(NAME_BIN) $(PREFIX)$(DIR_BIN)/$(NAME_BIN)
