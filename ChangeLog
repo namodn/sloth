@@ -1,3 +1,8 @@
+2002-02-08 Nick Jennings <nick@namodn.com>
+
+	* sloth.c: seperated process handling out into function 
+	handleProc(pid_t, long, long).
+
 2002-02-06 Nick Jennings <nick@namodn.com>
 
 	* Version 1.0.1 released.
