@@ -1,5 +1,6 @@
 AC_INIT(sloth.c)
 AM_INIT_AUTOMAKE(sloth, 1.0.1)
 AC_PROG_CC
+AC_HAVE_HEADERS(wait.h sys/ptrace.h sys/types.h sys/time.h)
 AC_OUTPUT(Makefile)
 
